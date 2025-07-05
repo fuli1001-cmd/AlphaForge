@@ -126,11 +126,6 @@ def main(
         instruments=instruments, target=target,freq=freq,
     )
     data_all, data,data_valid,data_valid_withhead,data_test,data_test_withhead,_ = returned
-    
-    print(f"Data loaded successfully:")
-    print(f"  data_all: {data_all.n_days} days, {data_all.n_stocks} stocks")
-    print(f"  data_valid: {data_valid.n_days} days")  
-    print(f"  data_test: {data_test.n_days} days")
 
     for seed in seeds:
         if isinstance(seeds,str):
@@ -173,16 +168,7 @@ def main(
         weights_list = []
 
         # evaluate from the first day of the valid set untill the last day of the test set
-        start_idx = len(fct_tensor)-data_test.n_days-data_valid.n_days
-        end_idx = len(fct_tensor)
-        print(f"Prediction loop range: {start_idx} to {end_idx} (total: {end_idx - start_idx} days)")
-        print(f"fct_tensor shape: {fct_tensor.shape}")
-        
-        if start_idx >= end_idx:
-            print(f"Error: Invalid loop range! start_idx({start_idx}) >= end_idx({end_idx})")
-            continue
-        
-        pbar = tqdm(range(start_idx, end_idx))
+        pbar = tqdm(range(len(fct_tensor)-data_test.n_days-data_valid.n_days,len(fct_tensor)))
         for cur in pbar:
 
             # control the past window that we use to evaluate the factors in order to filter factors and generate the weights
