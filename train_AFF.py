@@ -365,6 +365,8 @@ def main(
         zoo_blds.evaluate(data,target,metric,verbose=True)
         save_blds(zoo_blds,f"out/{cfg.name}",'zoo_final')
 
+    print("done.")
+
 if __name__ == '__main__':
     import fire
     fire.Fire(main)
