@@ -106,15 +106,7 @@ class StockData:
         dates = df.index.levels[0]                                      # type: ignore
         stock_ids = df.columns
         values = df.values
-        
-        # Handle empty values array to prevent reshape error
-        if values.size == 0:
-            # Create empty array with correct shape: (0, n_features, n_stocks)
-            n_stocks = len(stock_ids) if len(stock_ids) > 0 else 0
-            values = values.reshape((0, len(features), n_stocks))
-        else:
-            values = values.reshape((-1, len(features), values.shape[-1]))  # type: ignore
-        
+        values = values.reshape((-1, len(features), values.shape[-1]))  # type: ignore
         return torch.tensor(values, dtype=torch.float, device=self.device), dates, stock_ids
 
     @property
