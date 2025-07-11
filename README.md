@@ -21,7 +21,7 @@ python train_AFF.py --instruments=csi300 --train_end_year=2020 --seeds=[0,1,2,3,
 Here,
 - `instruments` is the dataset to use, e.g., `csi300`,`csi500`.
 - `seeds` is random seed list, e.g., `[0,1,2]` or `[0]`. 
-- `train_end_year` is the last year of training set, when train_end_year is 2020,the train,valid and test set is seperately: `2010-01-01 to 2020-12-31`,`2021-01-01 to 2021-12-31`,`2022-01-01 to 2022-12-31`
+- `train_end_year` is the last year of training set, when train_end_year is 2020,the train,valid and test set is seperately: `2012-01-01 to 2020-12-31`,`2021-01-01 to 2021-12-31`,`2022-01-01 to 2022-12-31`
 - `save_name` is the prefix when saving running results. `zoo_size` is the num of factors to save at stage 1 mining model.
 
 #### stage2: Combining alpha factors

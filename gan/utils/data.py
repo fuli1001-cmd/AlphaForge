@@ -5,7 +5,7 @@ from alphagen.data.expression import *
 
 import os
 def get_data_by_year(
-    train_start = 2010,train_end=2019,valid_year=2020,test_year =2021,
+    train_start = 2012,train_end=2019,valid_year=2020,test_year =2021,
     instruments=None, target=None,freq=None,
                     ):
     QLIB_PATH = {

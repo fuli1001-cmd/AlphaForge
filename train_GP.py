@@ -139,7 +139,7 @@ for seed in args.seed:
 
 
         returned = get_data_by_year(
-            train_start = 2010,train_end=train_end,valid_year=train_end+1,test_year =train_end+2,
+            train_start = 2012,train_end=train_end,valid_year=train_end+1,test_year =train_end+2,
             instruments=instruments, target=target,freq=args.freq,
         )
         data_all, data,data_valid,data_valid_withhead,data_test,data_test_withhead,name = returned
