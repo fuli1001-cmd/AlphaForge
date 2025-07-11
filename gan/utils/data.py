@@ -26,6 +26,8 @@ def get_data_by_year(
     test_start,test_end = test_dates
     test_head_start = f"{test_year-2}-01-01"
 
+    print(f"train_start: {train_start}, train_end: {train_end}, valid_start: {valid_start}, valid_end: {valid_end}, valid_head_start: {valid_head_start}, test_start: {test_start}, test_end: {test_end}, test_head_start: {test_head_start}")
+
     name = instruments + '_pkl_' + str(target).replace('/','_').replace(' ','') + '_' + freq
     name = f"{name}_{train_start}_{train_end}_{valid_start}_{valid_end}_{test_start}_{test_end}"
     try:
